@@ -1,9 +1,46 @@
 import { Container, Row, Col } from "react-bootstrap";
 import MyNavbar from "../../components/Navbar/Navbar";
 import ProgImg from "../../assets/images/programming.svg";
+import CourseItem from "../../components/Course/CourseItem";
+import { useState } from "react";
 
 function Home() {
+  const [courses , setCourses] = useState([
+    {
+      id:1,
+      title:'React',
+      text:'Online Course,Online Course,Online Course',
+      img:'https://next1code.ir/wp-content/uploads/2022/12/react-cover.jpg'
+    },
+    {
+      id:2,
+      title:'Redux',
+      text:'Online Course,Online Course,Online Course',
+      img:'https://next1code.ir/wp-content/uploads/2023/11/redux-course-cover-1-500x286.jpg'
+    },
+    {
+      id:3,
+      title:'Bootstrap',
+      text:'Online Course,Online Course,Online Course',
+      img:'https://next1code.ir/wp-content/uploads/2022/10/bootstrap-500x286.png'
+    },
+    {
+      id:4,
+      title:'javaScript',
+      text:'Online Course,Online Course,Online Course',
+      img:'https://next1code.ir/wp-content/uploads/2021/08/couse-cover-500x286.jpg'
+    },
+    {
+      id:5,
+      title:'Responsive Design',
+      text:'Online Course,Online Course,Online Course',
+      img:'https://next1code.ir/wp-content/uploads/2021/06/rwd-couse-cover-500x286.jpg'
+    }
+
+  ])
   return (
+
+      
     <div>
       <>
         <MyNavbar />
@@ -33,6 +70,14 @@ function Home() {
             <Col lg={6} className="py-4">
               <img src={ProgImg} className="img-fluid" />
             </Col>
+          </Row>
+          <Row className="my-5">
+            <h2 className="py-4">Courses</h2>
+           {courses.map(course => (
+            <Col key={course.id} md={6} lg={4} xl={3} className="py-3">
+            <CourseItem {...course} />
+            </Col>
+           ))}
           </Row>
         </Container>
       </>
