@@ -4,7 +4,7 @@ export let courseData = [
         id:1,
         title:'React',
         text:'Online Course,Online Course,Online Course',
-        img:'https://next1code.ir/wp-content/uploads/2022/12/react-cover.jpg'
+        img:'https://next1code.ir/wp-content/uploads/2022/12/react-cover-500x286.jpg'
       },
       {
         id:2,
