@@ -4,6 +4,9 @@ import Article from "./Pages/Article/Article";
 import Login from "./Pages/login/Login";
 import Panel from "./Pages/panel/Panel";
 import Course from "./Pages/Course/Course";
+import Setting from "./Pages/Setting";
+import PrivateRoute from "./components/PrivateRoute";
+
 
 
 const routes = [
@@ -18,7 +21,8 @@ const routes = [
     ],
 },
     {path:"/login" , element: <Login />},
-    {path:"/panel" , element: <Panel />},
+    {path:"/panel" , element: <PrivateRoute> <Panel /> </PrivateRoute> },
+    {path:"/Setting" , element: <PrivateRoute> <Setting /> </PrivateRoute> },
     {path:"/course/:courseId" , element: <Course />},
 ]
 
